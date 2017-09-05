@@ -10,7 +10,7 @@ def cmd_parser():
 	parser.add_argument('url', type=str,
 						help='target url(e.g. "http://www.site.com/path1/path2...")')
 	parser.add_argument('-t', '--threads', type=int, default=10,
-						help='thread count of detect webpath')
+						help='thread count of detect webpath(1~15)')
 	parser.add_argument('--jsp', action='store_true',
 						help='use .jsp common paths')
 	parser.add_argument('--asp', action='store_true',
@@ -34,5 +34,5 @@ def cmd_parser():
 
 if __name__ == '__main__':
 	args = cmd_parser()
-	print args.asp
+	print args
 
