@@ -17,6 +17,8 @@ def load_paths(args, paths):
 		filepaths.append(paths['asp'])
 	if args.aspx:
 		filepaths.append(paths['aspx'])
+	if args.cus:
+		filepaths.append(paths['cus'])
 
 	return getpaths(filepaths)
 

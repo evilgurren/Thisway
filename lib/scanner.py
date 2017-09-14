@@ -26,11 +26,11 @@ class Scanner(object):
 		try:
 			resp = requests.get(url, timeout=self.timeout)
 			# print '%s\t\t%s' % (url, str(resp.status_code))
-			if resp.ok:
+			if resp.status_code:
 				print '%s\t\t%s' % (url, str(resp.status_code))
 
-		except ConnectionError as e:
+		except requests.ConnectionError as e:
 			print 'sorry, u are blacklisted now!'
 			
 		except (requests.HTTPError, requests.Timeout) as e:
-			pass
+			print '%s\t\terror' % url

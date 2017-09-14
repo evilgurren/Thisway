@@ -21,11 +21,13 @@ def cmd_parser():
 						help='use .php common paths')
 	parser.add_argument('--dir', action='store_true',
 						help='use webserver common paths')
+	parser.add_argument('--cus', action='store_true',
+						help='use custom paths, or just test the single path')
 	parser.add_argument('--no-recursion', action='store_true',
 						help='detect path without recursion')
 
 	args = parser.parse_args()
-	allpath = [args.dir, args.jsp, args.php, args.asp, args.aspx]
+	allpath = [args.dir, args.jsp, args.php, args.asp, args.aspx, args.cus]
 	if not any(allpath):
 		parser.print_help()
 		raise SystemExit
