@@ -24,7 +24,7 @@ class Scanner(object):
 
 	def _scan(self, url):
 		try:
-			resp = requests.get(url, timeout=self.timeout)
+			resp = requests.get(url, verify=False, timeout=self.timeout)
 			# print '%s\t\t%s' % (url, str(resp.status_code))
 			if resp.status_code:
 				print '%s\t\t%s' % (url, str(resp.status_code))
